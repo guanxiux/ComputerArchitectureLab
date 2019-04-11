@@ -23,18 +23,18 @@ module IDSegReg(
     output wire [31:0] RD2,
     //
     input wire [31:0] PCF,
-    output reg [31:0] PCD 
+    output reg [31:0] PCD
     );
-    
+
     initial PCD = 0;
     always@(posedge clk)
         if(en)
             PCD <= clear ? 0: PCF;
-    
+
     wire [31:0] RD_raw;
     InstructionRam InstructionRamInst (
-         .clk    (),                        //请完善代码!!!
-         .addra  (),                        //请完善代码!!!
+         .clk    ( !clk ),                        //请完善代码!!!
+         .addra  ( A[31:2] ),                        //请完善代码!!!
          .douta  ( RD_raw     ),
          .web    ( |WE2       ),
          .addrb  ( A2[31:2]   ),
@@ -53,7 +53,7 @@ module IDSegReg(
         stall_ff<=~en;
         clear_ff<=clear;
         RD_old<=RD_raw;
-    end    
+    end
     assign RD = stall_ff ? RD_old : (clear_ff ? 32'b0 : RD_raw );
 
 endmodule
@@ -66,7 +66,7 @@ endmodule
     //因此在段寄存器模块中调用该同步memory，直接将输出传递到ID段组合逻辑
     //调用mem模块后输出为RD_raw，通过assign RD = stall_ff ? RD_old : (clear_ff ? 32'b0 : RD_raw );
     //从而实现RD段寄存器stall和clear功能
-//实验要求  
+//实验要求
     //你需要补全上方代码，需补全的片段截取如下
     //InstructionRam InstructionRamInst (
     //     .clk    (),                        //请完善代码

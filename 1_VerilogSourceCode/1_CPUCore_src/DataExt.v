@@ -1,22 +1,46 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
+// Company:
 // Engineer: qihao
 // Create Date: 03/09/2019 09:03:05 PM
-// Design Name: 
-// Module Name: DataExt 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Design Name:
+// Module Name: DataExt
+// Target Devices:
+// Tool Versions:
+// Description:
 //////////////////////////////////////////////////////////////////////////////////
 
-`include "Parameters.v"   
+`include "Parameters.v"
 module DataExt(
     input wire [31:0] IN,
     input wire [1:0] LoadedBytesSelect,
     input wire [2:0] RegWriteW,
     output reg [31:0] OUT
-    );    
+    );
+
+    initial begin
+        OUT = 0;
+    end
+
+    wire [7:0]LoadedByte1;
+    wire [15:0]LoadedByte2;
+    assign LoadedByte1 = (LoadedBytesSelect == 2'b0) ?  IN[7:0] :
+                        (LoadedBytesSelect == 2'b01) ?  IN[15:8]:
+                        (LoadedBytesSelect == 2'b10) ?  IN[23:16]:
+                                                        IN[31:24];
+
+    assign LoadedByte2 = (LoadedBytesSelect <= 2'b01) ?  IN[15:0] : IN[31:16];
+
+    always@(*)begin
+        case (RegWriteW)
+            LB  : OUT <= { {24{LoadedByte1[7]}}, LoadedByte1[7:0] };
+            LH  : OUT <= { {16{LoadedByte2[15]}}, LoadedByte2[15:0] };
+            LW  : OUT <= IN[31:0];
+            LBU : OUT <= { 24'b0, LoadedByte1[7:0] };
+            LHU : OUT <= { 16'b0, LoadedByte2[15:0] };
+            default : OUT <= 32'hxxxx_xxxx;;
+        endcase
+    end
 endmodule
 
 //功能说明
@@ -29,5 +53,5 @@ endmodule
     //RegWriteW             表示不同的 寄存器写入模式 ，所有模式定义在Parameters.v中
 //输出
     //OUT表示要写入寄存器的最终值
-//实验要求  
-    //实现DataExt模块  
+//实验要求
+    //实现DataExt模块

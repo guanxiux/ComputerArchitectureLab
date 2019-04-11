@@ -14,6 +14,19 @@ module NPC_Generator(
     input wire BranchE,JalD,JalrE,
     output reg [31:0] PC_In
     );
+    always @(*) begin :
+        if( BranchE ) begin
+            PC_In <= BranchTarget;
+        end
+        else if( JalrE ) begin
+            PC_In <= JalrTarget;
+        end
+        else if( JalD) begin
+            PC_In <= JalTarget;
+        end
+        else
+            PC_In <= PCF + 4;
+    end
 endmodule
 
 //功能说明
@@ -28,5 +41,5 @@ endmodule
     //JalrE==1         Ex阶段的Jalr指令确定跳转
 //输出
     //PC_In            NPC的值
-//实验要求  
-    //实现NPC_Generator模块  
+//实验要求
+    //实现NPC_Generator模块

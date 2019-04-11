@@ -1,6 +1,6 @@
-`timescale 1ns / 1ps
+﻿`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: USTC ESLAB（Embeded System Lab）
+// Company: USTC ESLAB锛圗mbeded System Lab锛?
 // Engineer: Haojun Xia & Xuan Wang
 // Create Date: 2019/02/08
 // Design Name: RISCV-Pipline CPU
@@ -26,7 +26,7 @@ module WBSegReg(
     output wire [31:0] RD2,
     //input control signals
     input wire [31:0] ResultM,
-    output reg [31:0] ResultW, 
+    output reg [31:0] ResultW,
     input wire [4:0] RdM,
     output reg [4:0] RdW,
     //output constrol signals
@@ -35,7 +35,7 @@ module WBSegReg(
     input wire MemToRegM,
     output reg MemToRegW
     );
-    
+
     //
     initial begin
         LoadedBytesSelect = 2'b00;
@@ -56,16 +56,16 @@ module WBSegReg(
 
     wire [31:0] RD_raw;
     DataRam DataRamInst (
-        .clk    (???),                      //请补全
-        .wea    (???),                      //请补全
-        .addra  (???),                      //请补全
-        .dina   (???),                      //请补全
+        .clk    ( !clk ),                      //璇疯ˉ鍏?
+        .wea    ( WE ),                      //璇疯ˉ鍏?
+        .addra  ( A[31:2] ),                      //璇疯ˉ鍏?
+        .dina   ( WD ),                      //璇疯ˉ鍏?
         .douta  ( RD_raw         ),
         .web    ( WE2            ),
         .addrb  ( A2[31:2]       ),
         .dinb   ( WD2            ),
         .doutb  ( RD2            )
-    );   
+    );
     // Add clear and stall support
     // if chip not enabled, output output last read result
     // else if chip clear, output 0
@@ -78,34 +78,34 @@ module WBSegReg(
         stall_ff<=~en;
         clear_ff<=clear;
         RD_old<=RD_raw;
-    end    
+    end
     assign RD = stall_ff ? RD_old : (clear_ff ? 32'b0 : RD_raw );
 
 endmodule
 
-//功能说明
-    //WBSegReg是Write Back段寄存器，
-    //类似于IDSegReg.V中对Bram的调用和拓展，它同时包含了一个同步读写的Bram
-    //（此处你可以调用我们提供的InstructionRam，它将会自动综合为block memory，你也可以替代性的调用xilinx的bram ip核）。
-    //同步读memory 相当于 异步读memory 的输出外接D触发器，需要时钟上升沿才能读取数据。
-    //此时如果再通过段寄存器缓存，那么需要两个时钟上升沿才能将数据传递到Ex段
-    //因此在段寄存器模块中调用该同步memory，直接将输出传递到WB段组合逻辑
-    //调用mem模块后输出为RD_raw，通过assign RD = stall_ff ? RD_old : (clear_ff ? 32'b0 : RD_raw );
-    //从而实现RD段寄存器stall和clear功能
-//实验要求  
-    //你需要补全上方代码，需补全的片段截取如下
+//鍔熻兘璇存槑
+    //WBSegReg鏄疻rite Back娈靛瘎瀛樺櫒锛?
+    //绫讳技浜嶪DSegReg.V涓Bram鐨勮皟鐢ㄥ拰鎷撳睍锛屽畠鍚屾椂鍖呭惈浜嗕竴涓悓姝ヨ鍐欑殑Bram
+    //锛堟澶勪綘鍙互璋冪敤鎴戜滑鎻愪緵鐨処nstructionRam锛屽畠灏嗕細鑷姩缁煎悎涓篵lock memory锛屼綘涔熷彲浠ユ浛浠ｆ?х殑璋冪敤xilinx鐨刡ram ip鏍革級銆?
+    //鍚屾璇籱emory 鐩稿綋浜? 寮傛璇籱emory 鐨勮緭鍑哄鎺瑙﹀彂鍣紝闇?瑕佹椂閽熶笂鍗囨部鎵嶈兘璇诲彇鏁版嵁銆?
+    //姝ゆ椂濡傛灉鍐嶉?氳繃娈靛瘎瀛樺櫒缂撳瓨锛岄偅涔堥渶瑕佷袱涓椂閽熶笂鍗囨部鎵嶈兘灏嗘暟鎹紶閫掑埌Ex娈?
+    //鍥犳鍦ㄦ瀵勫瓨鍣ㄦā鍧椾腑璋冪敤璇ュ悓姝emory锛岀洿鎺ュ皢杈撳嚭浼犻?掑埌WB娈电粍鍚堥?昏緫
+    //璋冪敤mem妯″潡鍚庤緭鍑轰负RD_raw锛岄?氳繃assign RD = stall_ff ? RD_old : (clear_ff ? 32'b0 : RD_raw );
+    //浠庤?屽疄鐜癛D娈靛瘎瀛樺櫒stall鍜宑lear鍔熻兘
+//瀹為獙瑕佹眰
+    //浣犻渶瑕佽ˉ鍏ㄤ笂鏂逛唬鐮侊紝闇?琛ュ叏鐨勭墖娈垫埅鍙栧涓?
     //DataRam DataRamInst (
-    //    .clk    (???),                      //请补全
-    //    .wea    (???),                      //请补全
-    //    .addra  (???),                      //请补全
-    //    .dina   (???),                      //请补全
+    //    .clk    (???),                      //璇疯ˉ鍏?
+    //    .wea    (???),                      //璇疯ˉ鍏?
+    //    .addra  (???),                      //璇疯ˉ鍏?
+    //    .dina   (???),                      //璇疯ˉ鍏?
     //    .douta  ( RD_raw         ),
     //    .web    ( WE2            ),
     //    .addrb  ( A2[31:2]       ),
     //    .dinb   ( WD2            ),
     //    .doutb  ( RD2            )
-    //);   
-//注意事项
-    //输入到DataRam的addra是字地址，一个字32bit
-    //请配合DataExt模块实现非字对齐字节load
-    //请通过补全代码实现非字对齐store
+    //);
+//娉ㄦ剰浜嬮」
+    //杈撳叆鍒癉ataRam鐨刟ddra鏄瓧鍦板潃锛屼竴涓瓧32bit
+    //璇烽厤鍚圖ataExt妯″潡瀹炵幇闈炲瓧瀵归綈瀛楄妭load
+    //璇烽?氳繃琛ュ叏浠ｇ爜瀹炵幇闈炲瓧瀵归綈store
