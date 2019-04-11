@@ -15,6 +15,11 @@ module BranchDecisionMaking(
     input wire [31:0] Operand1,Operand2,
     output reg BranchE
     );
+    always@(*)begin
+        case(BranchTypeE)
+            default: BranchE <= 0;
+        endcase
+    end
 endmodule
 
 //功能和接口说明
