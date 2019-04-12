@@ -1,0 +1,732 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Apr 11 21:10:26 2019
+# Process ID: 9988
+# Current directory: C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/RISC-V-MulticycleCPU/RISC-V-MulticycleCPU.runs/synth_1
+# Command line: vivado.exe -log RV32Core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV32Core.tcl
+# Log file: C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/RISC-V-MulticycleCPU/RISC-V-MulticycleCPU.runs/synth_1/RV32Core.vds
+# Journal file: C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/RISC-V-MulticycleCPU/RISC-V-MulticycleCPU.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source RV32Core.tcl -notrace
+Command: synth_design -top RV32Core -part xc7vx485tffg1157-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx485t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4180 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 355.609 ; gain = 102.941
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'RV32Core' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/RV32Core.v:12]
+INFO: [Synth 8-638] synthesizing module 'NPC_Generator' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/NPC_Generator.v:12]
+INFO: [Synth 8-256] done synthesizing module 'NPC_Generator' (1#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/NPC_Generator.v:12]
+INFO: [Synth 8-638] synthesizing module 'IFSegReg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/IFSegReg.v:12]
+INFO: [Synth 8-256] done synthesizing module 'IFSegReg' (2#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/IFSegReg.v:12]
+INFO: [Synth 8-638] synthesizing module 'IDSegReg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/IDSegReg.v:12]
+INFO: [Synth 8-638] synthesizing module 'InstructionRam' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/BRAMModule/InstructionRam.v:14]
+INFO: [Synth 8-256] done synthesizing module 'InstructionRam' (3#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/BRAMModule/InstructionRam.v:14]
+INFO: [Synth 8-256] done synthesizing module 'IDSegReg' (4#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/IDSegReg.v:12]
+INFO: [Synth 8-638] synthesizing module 'ControlUnit' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/ControlUnit.v:13]
+	Parameter I_S_type bound to: 7'b0010011 
+	Parameter R_type bound to: 7'b0110011 
+	Parameter LUI_instr bound to: 17'bxxxxxxxxxx0110111 
+	Parameter AUIPC_instr bound to: 17'bxxxxxxxxxx0010111 
+	Parameter ADDI_instr bound to: 17'bxxxxxxx0000010011 
+	Parameter SLTI_instr bound to: 17'bxxxxxxx0100010011 
+	Parameter SLTIU_instr bound to: 17'bxxxxxxx0110010011 
+	Parameter XORI_instr bound to: 17'bxxxxxxx1000010011 
+	Parameter ORI_instr bound to: 17'bxxxxxxx1100010011 
+	Parameter ANDI_instr bound to: 17'bxxxxxxx1110010011 
+	Parameter SLLI_instr bound to: 17'b00000000010010011 
+	Parameter SRLI_instr bound to: 17'b00000001010010011 
+	Parameter SRAI_instr bound to: 17'b01000001010010011 
+	Parameter ADD_instr bound to: 17'b00000000000110011 
+	Parameter SUB_instr bound to: 17'b01000000000110011 
+	Parameter SLL_instr bound to: 17'b00000000010110011 
+	Parameter SLT_instr bound to: 17'b00000000100110011 
+	Parameter SLTU_instr bound to: 17'b00000000110110011 
+	Parameter XOR_instr bound to: 17'b00000001000110011 
+	Parameter SRL_instr bound to: 17'b00000001010110011 
+	Parameter SRA_instr bound to: 17'b01000001010110011 
+	Parameter OR_instr bound to: 17'b00000001100110011 
+	Parameter AND_instr bound to: 17'b00000001110110011 
+INFO: [Synth 8-256] done synthesizing module 'ControlUnit' (5#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/ControlUnit.v:13]
+INFO: [Synth 8-638] synthesizing module 'ImmOperandUnit' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/ImmOperandUnit.v:13]
+INFO: [Synth 8-256] done synthesizing module 'ImmOperandUnit' (6#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/ImmOperandUnit.v:13]
+INFO: [Synth 8-638] synthesizing module 'RegisterFile' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/RegisterFile.v:12]
+INFO: [Synth 8-256] done synthesizing module 'RegisterFile' (7#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/RegisterFile.v:12]
+INFO: [Synth 8-638] synthesizing module 'EXSegReg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:12]
+INFO: [Synth 8-256] done synthesizing module 'EXSegReg' (8#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:12]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/ALU.v:13]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/ALU.v:26]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (9#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/ALU.v:13]
+INFO: [Synth 8-638] synthesizing module 'BranchDecisionMaking' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/BranchDecisionMaking.v:13]
+INFO: [Synth 8-256] done synthesizing module 'BranchDecisionMaking' (10#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/BranchDecisionMaking.v:13]
+INFO: [Synth 8-638] synthesizing module 'MEMSegReg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/MEMSegReg.v:12]
+INFO: [Synth 8-256] done synthesizing module 'MEMSegReg' (11#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/MEMSegReg.v:12]
+INFO: [Synth 8-638] synthesizing module 'WBSegReg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/WBSegReg.v:12]
+INFO: [Synth 8-638] synthesizing module 'DataRam' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/BRAMModule/DataRam.v:14]
+INFO: [Synth 8-256] done synthesizing module 'DataRam' (12#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/BRAMModule/DataRam.v:14]
+INFO: [Synth 8-256] done synthesizing module 'WBSegReg' (13#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/WBSegReg.v:12]
+INFO: [Synth 8-638] synthesizing module 'DataExt' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/DataExt.v:14]
+INFO: [Synth 8-256] done synthesizing module 'DataExt' (14#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/DataExt.v:14]
+INFO: [Synth 8-638] synthesizing module 'HarzardUnit' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/HarzardUnit.v:12]
+INFO: [Synth 8-256] done synthesizing module 'HarzardUnit' (15#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/HarzardUnit.v:12]
+INFO: [Synth 8-256] done synthesizing module 'RV32Core' (16#1) [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/RV32Core.v:12]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port CpuRst
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port ICacheMiss
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port DCacheMiss
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port BranchE
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port JalrE
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port JalD
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1D[4]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1D[3]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1D[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1D[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1D[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2D[4]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2D[3]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2D[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2D[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2D[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1E[4]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1E[3]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1E[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1E[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs1E[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2E[4]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2E[3]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2E[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2E[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port Rs2E[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdE[4]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdE[3]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdE[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdE[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdE[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdM[4]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdM[3]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdM[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdM[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdM[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdW[4]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdW[3]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdW[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdW[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RdW[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RegReadE[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RegReadE[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port MemToRegE
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RegWriteM[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RegWriteM[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RegWriteM[0]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RegWriteW[2]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RegWriteW[1]
+WARNING: [Synth 8-3331] design HarzardUnit has unconnected port RegWriteW[0]
+WARNING: [Synth 8-3331] design WBSegReg has unconnected port A2[1]
+WARNING: [Synth 8-3331] design WBSegReg has unconnected port A2[0]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port BranchTypeE[2]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port BranchTypeE[1]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port BranchTypeE[0]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[31]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[30]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[29]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[28]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[27]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[26]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[25]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[24]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[23]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[22]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[21]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[20]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[19]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[18]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[17]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[16]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[15]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[14]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[13]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[12]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[11]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[10]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[9]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[8]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[7]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[6]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[5]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[4]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[3]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[2]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[1]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand1[0]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[31]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[30]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[29]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[28]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[27]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[26]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[25]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[24]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[23]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[22]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[21]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[20]
+WARNING: [Synth 8-3331] design BranchDecisionMaking has unconnected port Operand2[19]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 410.055 ; gain = 157.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 410.055 ; gain = 157.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 410.055 ; gain = 157.387
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+INFO: [Synth 8-5546] ROM "RegReadD" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "AluSrc2D" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RegFile_reg[1]" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'AluOut_reg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/ALU.v:27]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 446.152 ; gain = 193.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 17    
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 11    
++---RAMs : 
+	             128K Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 28    
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
+	  22 Input      4 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 31    
+	  12 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module RV32Core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 9     
+Module NPC_Generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+Module IFSegReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module InstructionRam 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---RAMs : 
+	             128K Bit         RAMs := 1     
+Module IDSegReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module ControlUnit 
+Detailed RTL Component Info : 
++---Muxes : 
+	  22 Input      4 Bit        Muxes := 1     
+	  12 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 3     
+Module RegisterFile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 31    
+Module EXSegReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	  12 Input      1 Bit        Muxes := 1     
+Module MEMSegReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
+Module DataRam 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---RAMs : 
+	             128K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 12    
+	   2 Input      8 Bit        Muxes := 2     
+Module WBSegReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module DataExt 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2800 (col length:140)
+BRAMs: 2060 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'EXSegReg1/MemToRegE_reg' into 'EXSegReg1/JalrE_reg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:90]
+INFO: [Synth 8-4471] merging register 'EXSegReg1/LoadNpcE_reg' into 'EXSegReg1/JalrE_reg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:92]
+INFO: [Synth 8-4471] merging register 'EXSegReg1/AluSrc1E_reg' into 'EXSegReg1/JalrE_reg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:96]
+INFO: [Synth 8-4471] merging register 'MEMSegReg1/LoadNpcM_reg' into 'MEMSegReg1/MemToRegM_reg' [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/MEMSegReg.v:55]
+WARNING: [Synth 8-6014] Unused sequential element EXSegReg1/Rs1E_reg was removed.  [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:84]
+WARNING: [Synth 8-6014] Unused sequential element EXSegReg1/MemToRegE_reg was removed.  [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:90]
+WARNING: [Synth 8-6014] Unused sequential element EXSegReg1/LoadNpcE_reg was removed.  [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:92]
+WARNING: [Synth 8-6014] Unused sequential element EXSegReg1/RegReadE_reg was removed.  [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:93]
+WARNING: [Synth 8-6014] Unused sequential element EXSegReg1/BranchTypeE_reg was removed.  [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:94]
+WARNING: [Synth 8-6014] Unused sequential element EXSegReg1/AluSrc1E_reg was removed.  [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/EXSegReg.v:96]
+WARNING: [Synth 8-6014] Unused sequential element MEMSegReg1/LoadNpcM_reg was removed.  [C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/1_CPUCore_src/MEMSegReg.v:55]
+INFO: [Synth 8-3971] The signal WBSegReg1/DataRamInst/ram_cell_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3886] merging instance 'EXSegReg1/RegWriteE_reg[1]' (FDRE) to 'EXSegReg1/RegWriteE_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXSegReg1/RegWriteE_reg[2] )
+INFO: [Synth 8-3886] merging instance 'MEMSegReg1/RegWriteM_reg[1]' (FDRE) to 'MEMSegReg1/RegWriteM_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\WBSegReg1/clear_ff_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\WBSegReg1/stall_ff_reg )
+INFO: [Synth 8-3886] merging instance 'WBSegReg1/RegWriteW_reg[1]' (FDRE) to 'WBSegReg1/RegWriteW_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXSegReg1/AluSrc2E_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDSegReg1/clear_ff_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\IDSegReg1/stall_ff_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXSegReg1/JalrE_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXSegReg1/MemWriteE_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXSegReg1/MemWriteE_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXSegReg1/MemWriteE_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXSegReg1/MemWriteE_reg[1] )
+INFO: [Synth 8-3886] merging instance 'WBSegReg1/ResultW_reg[0]' (FDRE) to 'WBSegReg1/LoadedBytesSelect_reg[0]'
+INFO: [Synth 8-3886] merging instance 'WBSegReg1/ResultW_reg[1]' (FDRE) to 'WBSegReg1/LoadedBytesSelect_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\EXSegReg1/PCE_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/clear_ff_reg) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/stall_ff_reg) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[31]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[30]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[29]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[28]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[27]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[26]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[25]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[24]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[23]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[22]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[21]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[20]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[19]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[18]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[17]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[16]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[15]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[14]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[13]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[12]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[11]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[10]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[9]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[8]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[7]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[6]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[5]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[4]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[3]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[2]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[1]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/RD_old_reg[0]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[31]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[30]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[29]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[28]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[27]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[26]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[25]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[24]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[23]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[22]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[21]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[20]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[19]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[18]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[17]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[16]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[15]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[14]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[13]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[12]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[11]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[10]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[9]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[8]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[7]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[6]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[5]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[4]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[3]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[2]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[1]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (IDSegReg1/PCD_reg[0]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/clear_ff_reg) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/stall_ff_reg) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[31]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[30]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[29]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[28]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[27]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[26]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[25]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[24]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[23]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[22]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[21]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[20]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[19]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[18]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[17]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[16]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[15]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[14]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[13]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[12]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[11]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[10]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[9]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[8]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[7]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[6]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[5]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[4]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[3]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[2]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[1]) is unused and will be removed from module RV32Core.
+WARNING: [Synth 8-3332] Sequential element (WBSegReg1/RD_old_reg[0]) is unused and will be removed from module RV32Core.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++----------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name     | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|InstructionRam: | ram_cell_reg                       | 4 K x 32(READ_FIRST)   | W | R | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
+|RV32Core        | WBSegReg1/DataRamInst/ram_cell_reg | 4 K x 32(READ_FIRST)   | W | R | 4 K x 32(READ_FIRST)   | W | R | Port A and B     | 0      | 4      | 
++----------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++----------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name     | RTL Object                         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|InstructionRam: | ram_cell_reg                       | 4 K x 32(READ_FIRST)   | W | R | 4 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 4      | 
+|RV32Core        | WBSegReg1/DataRamInst/ram_cell_reg | 4 K x 32(READ_FIRST)   | W | R | 4 K x 32(READ_FIRST)   | W | R | Port A and B     | 0      | 4      | 
++----------------+------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance IDSegReg1/InstructionRamInst/ram_cell_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance IDSegReg1/InstructionRamInst/ram_cell_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance IDSegReg1/InstructionRamInst/ram_cell_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance IDSegReg1/InstructionRamInst/ram_cell_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance IDSegReg1/InstructionRamInst/ram_cell_reg_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance IDSegReg1/InstructionRamInst/ram_cell_reg_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance IDSegReg1/InstructionRamInst/ram_cell_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance IDSegReg1/InstructionRamInst/ram_cell_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance WBSegReg1/DataRamInst/ram_cell_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance WBSegReg1/DataRamInst/ram_cell_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance WBSegReg1/DataRamInst/ram_cell_reg_2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance WBSegReg1/DataRamInst/ram_cell_reg_3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|RV32Core    | WBSegReg1/RdW_reg[4]       | 3      | 5     | NO           | NO                 | YES               | 5      | 0       | 
+|RV32Core    | WBSegReg1/RegWriteW_reg[0] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++------------+----------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |    32|
+|3     |LUT1     |     4|
+|4     |LUT2     |     8|
+|5     |LUT3     |    50|
+|6     |LUT4     |   126|
+|7     |LUT5     |   188|
+|8     |LUT6     |   781|
+|9     |MUXF7    |   256|
+|10    |RAMB36E1 |     8|
+|11    |SRL16E   |     6|
+|12    |FDCE     |   992|
+|13    |FDRE     |   235|
+|14    |LD       |    32|
+|15    |IBUF     |   134|
+|16    |OBUF     |    64|
++------+---------+------+
+
+Report Instance Areas: 
++------+-----------------------+---------------+------+
+|      |Instance               |Module         |Cells |
++------+-----------------------+---------------+------+
+|1     |top                    |               |  2918|
+|2     |  ALU1                 |ALU            |    48|
+|3     |  EXSegReg1            |EXSegReg       |   573|
+|4     |  IDSegReg1            |IDSegReg       |    72|
+|5     |    InstructionRamInst |InstructionRam |    72|
+|6     |  IFSegReg1            |IFSegReg       |    36|
+|7     |  MEMSegReg1           |MEMSegReg      |    74|
+|8     |  NPC_Generator1       |NPC_Generator  |     8|
+|9     |  RegisterFile1        |RegisterFile   |  1824|
+|10    |  WBSegReg1            |WBSegReg       |    82|
+|11    |    DataRamInst        |DataRam        |    13|
++------+-----------------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 354 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 766.648 ; gain = 513.980
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 462 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 16 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 32 instances were transformed.
+  LD => LDCE: 32 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+111 Infos, 208 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 856.219 ; gain = 615.723
+INFO: [Common 17-1381] The checkpoint 'C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/RISC-V-MulticycleCPU/RISC-V-MulticycleCPU.runs/synth_1/RV32Core.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file RV32Core_utilization_synth.rpt -pb RV32Core_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.317 . Memory (MB): peak = 856.219 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 11 21:11:03 2019...

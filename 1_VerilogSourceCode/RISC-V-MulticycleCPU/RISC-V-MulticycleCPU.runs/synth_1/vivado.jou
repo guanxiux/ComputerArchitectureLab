@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Apr 11 21:10:26 2019
+# Process ID: 9988
+# Current directory: C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/RISC-V-MulticycleCPU/RISC-V-MulticycleCPU.runs/synth_1
+# Command line: vivado.exe -log RV32Core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RV32Core.tcl
+# Log file: C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/RISC-V-MulticycleCPU/RISC-V-MulticycleCPU.runs/synth_1/RV32Core.vds
+# Journal file: C:/Users/wo/OneDrive - mail.ustc.edu.cn/ComputerStructure/ComputerArchitectureLab/1_VerilogSourceCode/RISC-V-MulticycleCPU/RISC-V-MulticycleCPU.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source RV32Core.tcl -notrace

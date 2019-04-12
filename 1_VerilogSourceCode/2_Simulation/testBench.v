@@ -9,14 +9,14 @@
 // Tool Versions: Vivado 2017.4.1
 // Description: This testBench Help users to initial the bram content, by loading .data file and .inst file.
 //				Then give signals to start the execution of our cpu
-//				When all instructions finish their executions, this testBench will dump the Instruction Bram and Data Bram's content to .txt files 
-// !!! ALL YOU NEED TO CHANGE IS 4 FILE PATH BELOW !!!	
+//				When all instructions finish their executions, this testBench will dump the Instruction Bram and Data Bram's content to .txt files
+// !!! ALL YOU NEED TO CHANGE IS 4 FILE PATH BELOW !!!
 //				(they are all optional, you can run cpu without change paths here,if files are failed to open, we will not dump the content to .txt and will not try to initial your bram)
 //////////////////////////////////////////////////////////////////////////////////
-`define DataRamContentLoadPath "F:\\VivadoWorkspace\\RISCV-CPU\\RISCV-CPU.srcs\\sources_1\\new\\SimFiles\\1testAll.data"
-`define InstRamContentLoadPath "F:\\VivadoWorkspace\\RISCV-CPU\\RISCV-CPU.srcs\\sources_1\\new\\SimFiles\\1testAll.inst"
-`define DataRamContentSavePath "F:\\VivadoWorkspace\\RISCV-CPU\\RISCV-CPU.srcs\\sources_1\\new\\SimFiles\\DataRamContent.txt"
-`define InstRamContentSavePath "F:\\VivadoWorkspace\\RISCV-CPU\\RISCV-CPU.srcs\\sources_1\\new\\SimFiles\\InstRamContent.txt"
+`define DataRamContentLoadPath "C:\\Users\\wo\\OneDrive - mail.ustc.edu.cn\\ComputerStructure\\ComputerArchitectureLab\\2_BRAMInputFileGenerator\\Lab2.data"
+`define InstRamContentLoadPath "C:\\Users\\wo\\OneDrive - mail.ustc.edu.cn\\ComputerStructure\\ComputerArchitectureLab\\2_BRAMInputFileGenerator\\Lab2.inst"
+`define DataRamContentSavePath "C:\\Users\\wo\\OneDrive - mail.ustc.edu.cn\\ComputerStructure\\ComputerArchitectureLab\\2_BRAMInputFileGenerator\\DataRamContent.txt"
+`define InstRamContentSavePath "C:\\Users\\wo\\OneDrive - mail.ustc.edu.cn\\ComputerStructure\\ComputerArchitectureLab\\2_BRAMInputFileGenerator\\InstRamContent.txt"
 `define BRAMWORDS 4096  //a word is 32bit, so our bram is 4096*32bit
 
 module testBench(
@@ -55,9 +55,9 @@ module testBench(
     //
     integer i;
     //
-    initial 
+    initial
     begin
-        $display("Initialing reg values..."); 
+        $display("Initialing reg values...");
         CPU_Debug_DataRAM_WD2 = 32'b0;
         CPU_Debug_DataRAM_WE2 = 4'b0;
         CPU_Debug_InstRAM_WD2 = 32'b0;
@@ -67,13 +67,13 @@ module testBench(
         CPU_CLK=1'b0;
         CPU_RST = 1'b0;
         #10
-        
-        $display("Loading DataRam Content from file..."); 
+
+        $display("Loading DataRam Content from file...");
         LoadDataRamFile = $fopen(`DataRamContentLoadPath,"r");
         if(LoadDataRamFile==0)
             $display("Failed to Open %s, Do Not Load DataRam values from file!",`DataRamContentLoadPath);
-        else    begin  
-            CPU_Debug_DataRAM_A2 = 32'h0;     
+        else    begin
+            CPU_Debug_DataRAM_A2 = 32'h0;
             $fscanf(LoadDataRamFile,"%h",CPU_Debug_DataRAM_WD2);
             if($feof(LoadDataRamFile))
                 CPU_Debug_DataRAM_WE2 = 4'b0;
@@ -92,13 +92,13 @@ module testBench(
             end
             $fclose(LoadDataRamFile);
         end
-        
-        $display("Loading InstRam Content from file..."); 
+
+        $display("Loading InstRam Content from file...");
         LoadInstRamFile = $fopen(`InstRamContentLoadPath,"r");
         if(LoadInstRamFile==0)
             $display("Failed to Open %s, Do Not Load InstRam values from file!",`InstRamContentLoadPath);
-        else    begin  
-            CPU_Debug_InstRAM_A2 = 32'h0;     
+        else    begin
+            CPU_Debug_InstRAM_A2 = 32'h0;
             $fscanf(LoadInstRamFile,"%h",CPU_Debug_InstRAM_WD2);
             if($feof(LoadInstRamFile))
                 CPU_Debug_InstRAM_WE2 = 4'b0;
@@ -117,16 +117,16 @@ module testBench(
             end
             $fclose(LoadInstRamFile);
         end
-        
-        $display("Start Instruction Execution!"); 
-        #10;   
+
+        $display("Start Instruction Execution!");
+        #10;
         CPU_RST = 1'b1;
-        #10;   
+        #10;
         CPU_RST = 1'b0;
         #400000 												// waiting for instruction Execution to End
-        $display("Finish Instruction Execution!"); 
-        
-        $display("Saving DataRam Content to file..."); 
+        $display("Finish Instruction Execution!");
+
+        $display("Saving DataRam Content to file...");
         CPU_Debug_DataRAM_A2 = 32'hfffffffc;
         #10
         SaveDataRamFile = $fopen(`DataRamContentSavePath,"w");
@@ -146,8 +146,8 @@ module testBench(
                 end
             $fclose(SaveDataRamFile);
         end
-        
-        $display("Saving InstRam Content to file..."); 
+
+        $display("Saving InstRam Content to file...");
         SaveInstRamFile = $fopen(`InstRamContentSavePath,"w");
         if(SaveInstRamFile==0)
             $display("Failed to Open %s, Do Not Save InstRam values to file!",`InstRamContentSavePath);
@@ -165,11 +165,11 @@ module testBench(
                 @(negedge CPU_CLK);
                 $fwrite(SaveInstRamFile,"%4d\t%8h\t%4d\t%8h\t%4d\n",i,CPU_Debug_InstRAM_A2,CPU_Debug_InstRAM_A2,CPU_Debug_InstRAM_RD2,CPU_Debug_InstRAM_RD2);
                 end
-            $fclose(SaveInstRamFile);      
-        end      
+            $fclose(SaveInstRamFile);
+        end
 
-        $display("Simulation Ended!"); 
+        $display("Simulation Ended!");
         $stop();
     end
-    
+
 endmodule
