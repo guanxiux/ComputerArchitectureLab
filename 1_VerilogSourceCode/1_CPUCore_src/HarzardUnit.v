@@ -19,6 +19,7 @@ module HarzardUnit(
     output reg StallF, FlushF, StallD, FlushD, StallE, FlushE, StallM, FlushM, StallW, FlushW,
     output reg [1:0] Forward1E, Forward2E
     );
+
     initial begin
         StallF = 0;
         FlushF = 0;
@@ -33,11 +34,78 @@ module HarzardUnit(
         Forward1E = 0;
         Forward2E = 0;
     end
+
     //Stall and Flush signals generate
+    always @(*) begin
+        if(CpuRst) begin
+            FlushF <= 1;
+            FlushE <= 1;
+            FlushD <= 1;
+            FlushM <= 1;
+            FlushW <= 1;
+        end
+        else if(MemToRegE) begin
+            if(RegReadD >= 2'b10 && RdE == Rs1D) begin
+                StallF <= 1;
+                StallD <= 1;
+                FlushE <= 1;
+            end
+            else if(RegReadD == 2'b11 && RdE == Rs2D) begin
+                StallF <= 1;
+                StallD <= 1;
+                FlushE <= 1;
+            end
+        end
+        else if(BranchE || JalrE) begin
+            FlushD <= 1;
+            FlushE <= 1;
+            FlushM <= 1;
+        end
+        else if(JalD)begin
+            FlushD <= 1;
+            FlushE <= 1;
+        end
+        else begin
+            StallF <= 0;
+            FlushF <= 0;
+            StallD <= 0;
+            FlushD <= 0;
+            StallE <= 0;
+            FlushE <= 0;
+            StallM <= 0;
+            FlushM <= 0;
+            StallW <= 0;
+            FlushW <= 0;
+        end
+    end
 
     //Forward Register Source 1
+    always @(*) begin
+        if(RegReadE >= 2'b10) begin
+            if(RegWriteW && RdW == Rs1E) begin
+                Forward1E <= 2'b01;
+            end
+            else if(RegWriteM && RdM == Rs1E) begin
+                Forward1E <= 2'b10;
+            end
+            else Forward1E <= 2'b00;
+        end
+        else Forward1E <= 2'b00;
+    end
 
     //Forward Register Source 2
+    always @(*) begin
+        if(RegReadE == 2'b11) begin
+            if(RegWriteW && RdW == Rs2E) begin
+                Forward2E <= 2'b01;
+            end
+            else if(RegWriteM && RdM == Rs2E) begin
+                Forward2E <= 2'b10;
+            end
+            else Forward2E <= 2'b00;
+        end
+        else Forward2E <= 2'b00;
+    end
 
 endmodule
 

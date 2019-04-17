@@ -40,7 +40,7 @@ module RV32Core(
     wire [2:0] ImmType;
     wire [31:0] ImmD;
     wire [31:0] JalNPC;
-    wire [31:0] BrNPC; 
+    wire [31:0] BrNPC;
     wire [31:0] ImmE;
     wire [6:0] OpCodeD, Funct7D;
     wire [2:0] Funct3D;
@@ -64,11 +64,11 @@ module RV32Core(
     wire [31:0] Operand2;
     wire BranchE;
     wire [31:0] AluOutE;
-    wire [31:0] AluOutM; 
+    wire [31:0] AluOutM;
     wire [31:0] ForwardData1;
     wire [31:0] ForwardData2;
     wire [31:0] PCE;
-    wire [31:0] StoreDataM; 
+    wire [31:0] StoreDataM;
     wire [4:0] RdM;
     wire [31:0] PCM;
     wire [2:0] RegWriteM;
@@ -98,19 +98,20 @@ module RV32Core(
     // ---------------------------------------------
     NPC_Generator NPC_Generator1(
         .PCF(PCF),
-        .JalrTarget(AluOutE), 
-        .BranchTarget(BrNPC), 
+        .JalrTarget(AluOutE),
+        .BranchTarget(BrNPC),
         .JalTarget(JalNPC),
         .BranchE(BranchE),
         .JalD(JalD),
         .JalrE(JalrE),
+        .CPU_RST(CPU_RST),
         .PC_In(PC_In)
     );
 
     IFSegReg IFSegReg1(
         .clk(CPU_CLK),
         .en(~StallF),
-        .clear(FlushF), 
+        .clear(FlushF),
         .PC_In(PC_In),
         .PCF(PCF)
     );
@@ -129,7 +130,7 @@ module RV32Core(
         .WE2(CPU_Debug_InstRAM_WE2),
         .RD2(CPU_Debug_InstRAM_RD2),
         .PCF(PCF),
-        .PCD(PCD) 
+        .PCD(PCD)
     );
 
     ControlUnit ControlUnit1(
@@ -176,9 +177,9 @@ module RV32Core(
         .en(~StallE),
         .clear(FlushE),
         .PCD(PCD),
-        .PCE(PCE), 
+        .PCE(PCE),
         .JalNPC(JalNPC),
-        .BrNPC(BrNPC), 
+        .BrNPC(BrNPC),
         .ImmD(ImmD),
         .ImmE(ImmE),
         .RdD(RdD),
@@ -211,7 +212,7 @@ module RV32Core(
         .AluSrc1E(AluSrc1E),
         .AluSrc2D(AluSrc2D),
         .AluSrc2E(AluSrc2E)
-    	); 
+    	);
 
     ALU ALU1(
         .Operand1(Operand1),
@@ -235,9 +236,9 @@ module RV32Core(
         .en(~StallM),
         .clear(FlushM),
         .AluOutE(AluOutE),
-        .AluOutM(AluOutM), 
+        .AluOutM(AluOutM),
         .ForwardData2(ForwardData2),
-        .StoreDataM(StoreDataM), 
+        .StoreDataM(StoreDataM),
         .RdE(RdE),
         .RdM(RdM),
         .PCE(PCE),
@@ -269,7 +270,7 @@ module RV32Core(
         .WE2(CPU_Debug_DataRAM_WE2),
         .RD2(CPU_Debug_DataRAM_RD2),
         .ResultM(ResultM),
-        .ResultW(ResultW), 
+        .ResultW(ResultW),
         .RdM(RdM),
         .RdW(RdW),
         .RegWriteM(RegWriteM),
@@ -277,7 +278,7 @@ module RV32Core(
         .MemToRegM(MemToRegM),
         .MemToRegW(MemToRegW)
     );
-    
+
     DataExt DataExt1(
         .IN(DM_RD),
         .LoadedBytesSelect(LoadedBytesSelect),
@@ -317,11 +318,11 @@ module RV32Core(
         .FlushW(FlushW),
         .Forward1E(Forward1E),
         .Forward2E(Forward2E)
-    	);    
-    	         
+    	);
+
 endmodule
 
 //功能说明
     //RV32I 指令集CPU的顶层模�?
-//实验要求  
+//实验要求
     //无需修改

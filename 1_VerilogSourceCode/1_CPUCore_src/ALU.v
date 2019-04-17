@@ -20,14 +20,17 @@ module ALU(
    */
     wire signed [31:0]OP1_signed;
     wire signed [31:0]OP2_signed;
+
+    initial AluOut = 0;
+
     assign OP1_signed = Operand1;
     assign OP2_signed = Operand2;
     always@(*)begin
         case(AluContrl)
-            `SLL: AluOut <= Operand1 << Operand2;        //SLLI, SLL
-            `SRL: AluOut <= Operand1 >> Operand2;        //SRLI, SRL
-            `SRA: AluOut <= Operand1 >>> Operand2;       //SRAI, SRA
-            `ADD: AluOut <= Operand1 + Operand2;         //ADD, ADDI
+            `SLL: AluOut <= Operand1 << Operand2[4:0];        //SLLI, SLL
+            `SRL: AluOut <= Operand1 >> Operand2[4:0];        //SRLI, SRL
+            `SRA: AluOut <= OP1_signed >>> Operand2[4:0];       //SRAI, SRA
+            `ADD: AluOut <= Operand1 + Operand2;         //ADD, ADDI, AUIPC
             `SUB: AluOut <= Operand1 - Operand2;         //SUB, SUBI
             `SLT: begin
                 if (OP1_signed < OP2_signed)
@@ -42,7 +45,7 @@ module ALU(
             `XOR: AluOut <= Operand1 ^ Operand2;        //XOR, XORI
             `OR: AluOut <= Operand1 | Operand2;         //OR, ORI
             `AND: AluOut <= Operand1 & Operand2;        //AND, ANDI
-            `LUI: AluOut <= Operand2 + Operand1;        //LUI, AUIPC
+            `LUI: AluOut <= Operand2;                   //LUI
         endcase
     end
 
